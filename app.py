@@ -92,7 +92,7 @@ def stations():
 @app.route("/api/v1.0/tobs")
 def tobs():
 
-	latest_year_tobs = sess.query(Measurement.tobs,Measurement.date,Measurement.station).filter(Measurement.date > date_oneYearAgo).all()
+	latest_year_tobs = sess.query(Measurement.tobs,Measurement.date,Measurement.station).filter(Measurement.date > date_oneYearAgo).filter(Measurement.station == "USC00519281").all()
 
 	temp_list = list()
 	for data in latest_year_tobs:
