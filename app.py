@@ -30,8 +30,7 @@ year = (latest_date.year)
 month = (latest_date.month)
 day = (latest_date.day)
 
-# Only need date part
-# latest_date = dt.datetime.strptime(latest_date, "%y-%m-%d")
+# calculate the date one year ago from the latest date of the data set
 date_oneYearAgo = dt.date(year[0], month[0], day[0]) - dt.timedelta(days=365)
 
 ############################################
@@ -40,9 +39,9 @@ date_oneYearAgo = dt.date(year[0], month[0], day[0]) - dt.timedelta(days=365)
 
 app = Flask(__name__)
 
-############################################
-# Welcome page
-############################################
+#####################################################
+# Welcome page : List all routes that are available
+#####################################################
 
 @app.route("/")
 def welcome():
